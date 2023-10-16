@@ -35,7 +35,7 @@ public class FilterTaskAuth  extends OncePerRequestFilter{
                 String[] credentials = authString.split(":");
                 String username = credentials[0];
                 String password = credentials[1];
-
+                System.out.println(username);
                 var user = this.userRepository.findByUsername(username);
                 if (user == null){
                     response.sendError(401);
